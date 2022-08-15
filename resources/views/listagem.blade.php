@@ -11,8 +11,12 @@
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <img src="img/logo/secult-escura.png" width="180">&nbsp &nbsp &nbsp
-                    <a class="btn btn-sm btn-outline-light btn-sm-square bg-success border-danger" href="{{route('login.destroy')}}"><i class="fa fa-window-close bg-secondary" aria-hidden="true"></a></i>
+                    <img src="img/logo/secult-escura.png" width="180">
+                    @if(auth()->user()->super_usuario != NULL)
+                       <butaton onclick="NovoUser()" type="button" class="btn text-light bg-dark ms-3"><i class="fa fa-user-circle-o" aria-hidden="true"></i><i class="fa fa-user-plus" aria-hidden="true"></i></butaton></a>
+                    @endif
+                    &nbsp &nbsp &nbsp
+                    <button onclick="sair()" class="btn btn-sm btn-outline-light btn-sm-square bg-success border-danger" ><i class="fa fa-window-close bg-secondary" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
@@ -30,9 +34,6 @@
                     <a href="/desativados" class="nav-item nav-link "><b>Encerrados</b></a>
                 </div>
                 <butaton type="button" class="btn text-light bg-dark ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"> Pesquisar</i></butaton>
-                @if(auth()->user()->super_usuario != NULL)
-                <a href="/registro"> <butaton type="button" class="btn text-light bg-dark ms-3"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Add user</butaton></a>
-                @endif
             </div>
         </nav>
     </div>

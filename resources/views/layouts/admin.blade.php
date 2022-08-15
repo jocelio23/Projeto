@@ -26,6 +26,38 @@
     <!-- Libs jquery, js, ajax e bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script>
+        function sair()
+        {
+            var r=confirm("Você deseja realmente sair?");
+            if (r==true)
+            {
+                window.location.href='/logout';
+            }
+            else
+            {
+            window.location.href='/listagem';
+            }
+            document.getElementById("demo").innerHTML=x;
+        }
+
+        function NovoUser()
+        {
+            var r=confirm("Você deseja adicionar um novo usuário?");
+            if (r==true)
+            {
+                window.location.href='/registro';
+            }
+            else
+            {
+            window.location.href='/listagem';
+            }
+            document.getElementById("demo").innerHTML=x;
+        }
+        
+    </script>
+
 </head>
 <body>    
 @yield('content')

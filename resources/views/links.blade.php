@@ -168,10 +168,10 @@
                                         </h4>                               
                                         <a href="/anexo/{{$nexos->id}}"> <input type="submit" value="Alterar link" class="btn btn-outline-success"> </a>
 
-                                        <form action="/apagaAnexo/{{$nexos->id}}" method="POST">
+                                        <!-- <form action="/apagaAnexo/{{$nexos->id}}" method="POST">
                                         @csrf
                                         
-                                         <Button class="btn btn-outline-danger">Apagar</Button>
+                                         <Button class="btn btn-outline-danger">Apagar</Button> -->
                                         </form>   
                                                                         
                                     </div>                        

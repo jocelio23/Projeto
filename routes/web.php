@@ -85,7 +85,8 @@ Route::post('/login', [SessaoController::class, 'store'])
     ->name('login.store');
 
 Route::post('/registro', [RegistroController::class, 'store'])
-    ->name('registro.store');
+    ->name('registro.store')
+    ->middleware('auth');
 
 Route::get('/logout', [SessaoController::class, 'destroy'])
     ->middleware('auth')
