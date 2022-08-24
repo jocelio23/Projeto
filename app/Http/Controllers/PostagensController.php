@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\Console\Input\Input;
 
-
 class PostagensController extends Controller
 {
   public function inserirPostagem(Request $request)
@@ -201,6 +200,4 @@ class PostagensController extends Controller
     
     return view('listagem', compact('posts'));
   }
-}    
-
-
+}

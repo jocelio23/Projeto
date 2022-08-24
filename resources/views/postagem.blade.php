@@ -102,7 +102,7 @@
                        <butaton onclick="NovoUser()" type="button" class="btn text-light bg-dark ms-3"><i class="fa fa-user-circle-o" aria-hidden="true"></i><i class="fa fa-user-plus" aria-hidden="true"></i></butaton></a>
                     @endif
                     &nbsp &nbsp &nbsp
-                    <button onclick="sair()" class="btn btn-sm btn-outline-light btn-sm-square bg-success border-danger" ><i class="fa fa-window-close bg-secondary" aria-hidden="true"></i></button>
+                    <button onclick="sair()" class="btn btn-outline-light  bg-danger border-danger" >Sair</button>
                 </div>
                 
             </div>
@@ -120,6 +120,7 @@
                     <a href="/desativados" class="nav-item nav-link "><b>Encerrados</b></a>
 
                 </div>
+              
                 <butaton type="button" class="btn text-light bg-dark ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"> Pesquisar</i></butaton>
                
             </div>
@@ -180,11 +181,11 @@
                                     <input type="text" name="valor" class="form-control border-1 bg-light px-4" onpaste="return false" ondrop="return false" placeholder="EX: R$: 00.00,00" style="height: 55px;" onkeypress="return numerais()" ; required>
                                 </div>
                                 <div class="col-12">
-                                    E-mail:
+                                    E-mail: *
                                     <input type="email" name="email" class="form-control border-1 bg-light px-4" placeholder="Ex: editais@gmail.com" style="height: 55px;" required>
                                 </div>
                                 <div class="col-12">
-                                    Telefone:
+                                    Telefone: *
                                     <input type="tel" name="telefone" id="telefone" class="form-control border-1 bg-light px-4" placeholder="Ex: (00) 0 - 0000-0000" style="height: 55px;" required>
                                 </div>
                                 <div class="col-12">

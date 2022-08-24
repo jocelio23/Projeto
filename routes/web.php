@@ -5,6 +5,8 @@ use App\Http\Controllers\AnexosController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\SessaoController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route\Mail;
+use App\Http\Controllers\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostagensController::class, 'listagemEditais'])
 ->name('postagens.editais');
-
 
 Route::get('/equipamentos', function () 
 {
@@ -128,7 +129,53 @@ Route::get('/listagemDes', [PostagensController::class, 'buscarDesativados'])
 ->name('pesquisa.desativados')
 ->middleware('auth'); 
 
-
 Route::post('/apagaAnexo/{$id}', [AnexosController::class, 'apagaAnexo'])
 ->name('anexo.apaga')
-->middleware('auth'); 
+->middleware('auth');
+
+Route::get('/layout', function()
+{
+    return view('layout');
+});
+
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+/* Aqui script para fazer um envio de e-mail de teste */
+
+/* Route::get('sendemail', function () {
+
+    $data = array(
+        'name' => "Learning Laravel",
+    );
+
+    Mail::send('emails.welcome', $data, function ($message) {
+
+        $message->from('joceliotecinfor@gmail.com', 'Learning Laravel');
+
+        $message->to('joceliotecinfor@gmail.com')->subject('Learning Laravel test email');
+
+    });
+
+    return "Your email has been sent successfully";
+
+}); */
+
+Route::get('send-mail', function () {
+   
+    $details = [
+        'title' => 'E-Mail para SendinBlue.com',
+        'body' => 'Este foi um E-Mail de teste usando smtp'
+    ];
+   
+    Mail::to('joceliotecinfor@gmail.com')->send(new \App\Mail\MyTestMail($details));
+   
+    dd("E-Mail foi mandado.");
+});
+
+Route::get('/myTestMail', function()
+{
+    return view('email.myTestMail');
+});

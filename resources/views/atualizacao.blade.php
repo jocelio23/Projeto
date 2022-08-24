@@ -165,38 +165,38 @@
                         <div class="row g-3">
                             <div class="col-12">
                                 <input type="hidden" name="id" value="">
-                                Nome:
+                                Nome: *
                                 <input type="text" name="nome" class="form-control border-1 bg-light px-4"
                                     value="{{ $atual->nome }}" style="height: 55px;" required>
                             </div>
 
                             <div class="col-12">
-                                Etapas:
+                                Etapas: *
                                 <textarea name="etapa" class="form-control border-1 bg-light px-4 py-4" rows="4"
                                     required>{{ $atual->etapa }}</textarea>
                             </div>
 
                             <div class="col-12">
-                                Valor:
+                                Valor: *
                                 <input type="text" name="valor" class="form-control border-1 bg-light px-4"
                                     value="{{ $atual->valor }}" style="height: 55px;" onkeypress="return numerais()">
                             </div>
 
                             <div class="col-12">
-                                E-mail:
+                                E-mail: *
                                 <input type="email" name="email" class="form-control border-1 bg-light px-4"
                                     value="{{ $atual->email }}" style="height: 55px;">
                             </div>
 
                             <div class="col-12">
-                                Telefone:
+                                Telefone: *
                                 <input type="tel" name="telefone" id="telefone"
                                     class="form-control border-1 bg-light px-4" placeholder="(00) 9 - 0000-0000"
                                     value="{{ $atual->telefone }}" placeholder="(00) 9 - 0000-0000" style="height: 55px;">
                             </div>
 
                             <div class="col-12">
-                                <label>Selecione uma categoria: </label><br />
+                                <label>Selecione uma categoria: * </label><br />
                                 <select name="categoria" class="form-control border-1 bg-light px-4"
                                     style="opacity: calc(1)">
                                     <p style="opacity: calc(0.5)">
@@ -208,7 +208,7 @@
                                 </select>
                             </div>
                             <div class="col-12">
-                                <label>Status do Edital: </label><br />
+                                <label>Status do Edital: * </label><br />
                                 <select name="flag" class="form-control border-1 bg-light px-4"
                                     style="opacity: calc(1)">
                                     <p style="opacity: calc(0.5)">
@@ -220,7 +220,7 @@
                             </div>
 
                             <div class="col-12">
-                                Selecione uma imagem para o edital
+                                Selecione uma imagem para o edital *
                                 <input type="file" name="arquivo" accept="image/png,image/jpg, image/jpeg"
                                     class="form-control border-1 bg-light px-4">{{ $atual->arquivo }}<br />
 
